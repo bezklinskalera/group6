@@ -1,72 +1,76 @@
-import React from 'react';
-import { BarChart } from '@mui/x-charts/BarChart';
-import { useState } from 'react';
-
+import React from "react";
+import { PieChart } from "@mui/x-charts/PieChart";
+import { BlockMenuStudent } from "../components/BlockMenuStudent/BlockMenuStudent";
+import "../styles/StudentPage.css";
 
 export const StudentPage = () => {
-    const [count, setCount] = useState(0)
-  const data = [
-    { name: 'ТВ-21', атестовані: 25, неАтестовані: 5 },
-    { name: 'ТВ-22', атестовані: 27, неАтестовані: 3 },
-    { name: 'ТВ-23', атестовані: 15, неАтестовані: 12 },
+  const chartsData = [
+    [
+      { id: 0, value: 16, color: "#FF6384" }, // Призначення кольору для кожного сектору
+      { id: 1, value: 84, color: "#E6E6E6" },
+    ],
+    [
+      { id: 0, value: 25, color: "#FF9F40" },
+      { id: 1, value: 75, color: "#E6E6E6" },
+    ],
+    [
+      { id: 0, value: 30, color: "#3C8DBC" },
+      { id: 1, value: 70, color: "#E6E6E6" },
+    ],
+    [
+      { id: 0, value: 40, color: "#4DFF00" },
+      { id: 1, value: 60, color: "#E6E6E6" },
+    ],
+    [
+      { id: 0, value: 50, color: "#FF4F00" },
+      { id: 1, value: 50, color: "#E6E6E6" },
+    ],
+    [
+      { id: 0, value: 60, color: "#9C27B0" },
+      { id: 1, value: 40, color: "#E6E6E6" },
+    ],
+    [
+      { id: 0, value: 70, color: "#8BC34A" },
+      { id: 1, value: 30, color: "#E6E6E6" },
+    ],
   ];
-  
-  const series = [
-    {
-      label: 'Атестовані',
-      data: data.map(item => item.атестовані),
-    },
-    {
-      label: 'Неатестовані',
-      data: data.map(item => item.неАтестовані),
-    },
+
+  const subjects = [
+    "ТЕХНОЛОГІЇ DEVOPS",
+    "АСИНХРОННЕ ПРОГРАМУВАННЯ",
+    "ОСНОВИ ІНТЕРНЕТУ РЕЧЕЙ ",
+    "ПРОГРАМНЕ ЗАБЕЗПЕЧЕННЯ МЕРЕЖ ПЕРЕДАЧІ ДАНИХ",
+    "ОСНОВИ РОЗРОБКИ ТРАНСЛЯТОРІВ",
+    "ПРАКТИЧНИЙ КУРС ІНОЗЕМНОЇ МОВИ",
+    "КОМПОНЕНТИ ПРОГРАМНОЇ ІНЖЕНЕРІЇ",
   ];
-  
-  const categories = data.map(item => item.name);
 
   return (
-    <>
-    <p>ssddd</p>
-    
-    <BarChart
-      series={series}
-      height={360}
-      xAxis={[{ data: categories, scaleType: 'band' }]}
-      margin={{ top: 10, bottom: 30, left: 40, right: 10 }}
-    />
-    </>
-  )
-}
+    <div className="main" style={{ display: "flex" }}>
+      <BlockMenuStudent />
+      <div className="centralBlock">
+        <p className="welcomeText">Вітаємо,</p>
+        <div className="subjectsPieCharts">
 
-/*
- const [count, setCount] = useState(0)
-  const data = [
-    { name: 'ТВ-21', атестовані: 25, неАтестовані: 5 },
-    { name: 'ТВ-22', атестовані: 27, неАтестовані: 3 },
-    { name: 'ТВ-23', атестовані: 15, неАтестовані: 12 },
-  ];
-  
-  const series = [
-    {
-      label: 'Атестовані',
-      data: data.map(item => item.атестовані),
-    },
-    {
-      label: 'Неатестовані',
-      data: data.map(item => item.неАтестовані),
-    },
-  ];
-  
-  const categories = data.map(item => item.name);
-
-  return (
-    
-    
-    <BarChart
-      series={series}
-      height={360}
-      xAxis={[{ data: categories, scaleType: 'band' }]}
-      margin={{ top: 10, bottom: 30, left: 40, right: 10 }}
-    />
-  )
-*/
+          {chartsData.map((data, index) => (
+            <div key={index} className="pieChartContainer">
+              <PieChart
+                series={[
+                  {
+                    data: data,
+                    innerRadius: 45,
+                  },
+                ]}
+                width={400}
+                height={200}
+              />
+              <div className="chartValue">{data[0].value}</div>
+              <div className="chartLabel">{subjects[index]}</div>{" "}
+              {/* Додаємо підписи до діаграм */}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};

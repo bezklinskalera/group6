@@ -1,3 +1,4 @@
+//Сторінка реєстрації
 import React, { useState } from 'react';
 import { TextField, Button, Box, Typography, Container, MenuItem, Select, InputLabel, FormControl } from '@mui/material';
 import { Person, Email, Lock } from '@mui/icons-material';
