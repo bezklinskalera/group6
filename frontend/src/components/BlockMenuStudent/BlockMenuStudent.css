@@ -1,0 +1,12 @@
+.leftBlock {
+    background-color: #E6E6E6;
+    width: 20%; 
+    height: 100vh;
+}
+
+.header_logo_pic{
+    height: 60px;
+    width: 60px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
