@@ -3,10 +3,29 @@ dotenv.config();
 import { connectDB } from "./config/db.js";
 
 import express from 'express';
+import Student from "./models/student.js";
 
 const app = express();
 
-app.get("/products", (req, res) => {});
+app.use(express.json());
+
+app.post("/api/students", async (req, res) => {
+    const student = req.body;
+
+    if(!student.full_name || !student.Email || !student.ID_group || !student.password){
+        return res.status(400).json({ success:false, message: "Please provide all fields"});
+    }
+
+    const newStudent = new Student(student)
+
+    try{
+        await newStudent.save();
+        res.status(201).json({ success: true, data: newStudent});
+    } catch (error) {
+        console.error("Error in Create student:", error.message);
+        res.status(500).json({ success: false, message: "Server Error"});
+    }
+});
 
 if (!process.env.MONGO_URI) {
     console.log("MONGO_URI is missing in .env file");
@@ -14,10 +33,7 @@ if (!process.env.MONGO_URI) {
     console.log("MONGO_URI:", process.env.MONGO_URI);
 }
 
-app.listen(8084, (err) => {
+app.listen(5500, () => {
     connectDB();
-    if (err) {
-        return console.log(err);
-    }
-    console.log("Server Ok");
+    console.log("Server started at http://localhost:5500");
 });

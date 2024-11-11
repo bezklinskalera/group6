@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const student = new mongoose.Schema({
     ID_student: {
     type: Number,
-    required: true
+    required: false
     },
     full_name: {
     type: String,
@@ -17,17 +17,13 @@ const student = new mongoose.Schema({
     type: Number,
     required: false
     },
-    birth_date: {
-    type: Number,
-    required: true
-    },
     Email: {
     type: String,
     required: true
     },
     student_card_number: {
     type: String,
-    required: true
+    required: false
     },
     general_pacing: {
     type: Number,
@@ -35,8 +31,8 @@ const student = new mongoose.Schema({
     },
     password: {
     type: Number,
-    required: false
-    },
+    required: true
+    }
 });
  
 const Student = mongoose.model('Student', student);
