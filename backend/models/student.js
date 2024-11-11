@@ -14,7 +14,7 @@ const student = new mongoose.Schema({
     required: true
     },
     birth_date: {
-    type: Number,
+    type: String,
     required: false
     },
     Email: {

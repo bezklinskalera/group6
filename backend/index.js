@@ -27,6 +27,17 @@ app.post("/api/students", async (req, res) => {
     }
 });
 
+app.delete("/api/students/:id", async (req, res) => {
+    const { id } = req.params;
+
+    try{
+        await Student.findByIdAndDelete(id);
+        res.status(200).json({ success: true, message: "Product deleted"});
+    } catch(error){
+        res.status(404).json({ success: false, message: "Product not found"});
+    }
+});
+
 if (!process.env.MONGO_URI) {
     console.log("MONGO_URI is missing in .env file");
 } else {
