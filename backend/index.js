@@ -4,6 +4,7 @@ import { connectDB } from "./config/db.js";
 
 import express from 'express';
 import Student from "./models/student.js";
+import mongoose from "mongoose";
 
 const app = express();
 
@@ -17,9 +18,7 @@ app.get("/api/students", async (req, res) => {
         console.log("error in fetching products:", error.message);
         res.status(500).json({ success: false, message: "Server Error"});
     }
-})
-
-
+});
 
 app.post("/api/students", async (req, res) => {
     const student = req.body;
@@ -38,6 +37,23 @@ app.post("/api/students", async (req, res) => {
         res.status(500).json({ success: false, message: "Server Error"});
     }
 });
+
+app.put("/api/students/:id", async (req, res) => {
+    const {id} = req.params;
+
+    const student = req.body;
+
+    if(!mongoose.Types.ObjectId.isValid(id)){
+        return res.status(404).json({success:false, message:"Invalid Product Id"});
+    }
+
+    try{
+        const updatedStudent = await Student.findByIdAndUpdate(id, student, {new:true});
+        res.status(200).json({success: true, data: updatedStudent});
+    } catch (error){
+        res.status(500).json({success: false, message: "Server Error"})
+    }
+})
 
 app.delete("/api/students/:id", async (req, res) => {
     const { id } = req.params;
