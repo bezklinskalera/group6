@@ -30,7 +30,7 @@ const student = new mongoose.Schema({
     required: false
     },
     password: {
-    type: Number,
+    type: String,
     required: true
     }
 });
