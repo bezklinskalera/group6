@@ -10,7 +10,7 @@ const app = express();
 
 app.use(express.json());
 
-app.use("/api/products", studentRoutes);
+app.use("/api/students", studentRoutes);
 
 app.listen(5500, () => {
     connectDB();
