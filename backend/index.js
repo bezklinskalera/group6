@@ -4,6 +4,7 @@ import { connectDB } from "./config/db.js";
 
 import studentRoutes from "./routes/student.route.js";
 
+
 dotenv.config();
 
 const app = express();
