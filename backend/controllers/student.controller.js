@@ -3,6 +3,7 @@ import Group from "../models/group.model.js";
 import Student from "../models/student.model.js";
 import Teacher from "../models/teacher.model.js";
 
+//Отримання даних всіх студентів
 export const getStudents = async (req, res) => {
     try{
         const students = await Student.find({});
@@ -13,6 +14,7 @@ export const getStudents = async (req, res) => {
     }
 };
 
+//Реєстрація студента
 export const signupStudent = async (req, res) => {
     const studentData = req.body;
 
@@ -118,6 +120,25 @@ export const signinUser = async (req, res) => {
     }
 };
 
+export const getStudentsByGroup = async (req, res) => {
+    const { groupCode } = req.params; // Отримання group_code з параметрів URL
+
+    try {
+        // Перевірка, чи існує група з таким group_code
+        const group = await Group.findOne({ group_code: groupCode });
+        if (!group) {
+            return res.status(404).json({ success: false, message: "Group not found." });
+        }
+
+        // Пошук студентів за group_code
+        const students = await Student.find({ group_code: groupCode });
+
+        res.status(200).json({ success: true, data: students });
+    } catch (error) {
+        console.error("Error in getStudentsByGroup:", error.message);
+        res.status(500).json({ success: false, message: "Server Error." });
+    }
+};
 
 export const updateStudent = async (req, res) => {
     const {id} = req.params;
