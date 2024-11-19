@@ -1,0 +1,75 @@
+.main {
+    display: flex;
+    
+    font-family: "Montserrat", sans-serif;
+  }
+  
+.centralBlock{
+  display: flex;
+  flex-direction: column;
+}
+
+.welcomeText {
+  font-size: 34px; /* Збільшуємо розмір шрифту для "Вітаємо" */
+  margin-bottom: 20px;
+  font-weight: 700;
+   /* Відступ між текстом і діаграмами */
+}
+
+  /* .subjectsPieCharts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 50px;
+    padding: 20px;
+    width: 100%;
+    font-size: clamp(10px, 5vw, 15px);
+    text-align: center;
+  }
+  
+  .pieChartContainer {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: 200px;
+  }
+   */
+
+   .subjectsPieCharts {
+    display: flex;
+    flex-wrap: wrap; /* Дозволяємо перенос на новий ряд */
+    justify-content: center; /* Вирівнюємо по центру */
+    gap: 50px; /* Відстань між діаграмами */
+    padding: 20px;
+    width: 100%;
+    font-size: clamp(10px, 5vw, 15px);
+    text-align: center;
+  }
+  .pieChartContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 200px; /* Встановлюємо ширину для горизонтального розташування */
+  }
+  .chartLabel {
+    margin-top: 10px; /* Відступ між діаграмою та текстом */
+    text-align: center;
+    font-size: 14px;
+  }
+
+
+  .chartValue {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    color: rgb(121, 121, 121);
+  }
+  
+  .barChartContainer {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+  }
