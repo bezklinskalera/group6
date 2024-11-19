@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import { StudentPage } from './pages/StudentPage.jsx'
 import { RegistrationPage } from './pages/RegistrationPage.jsx'
 import { LoginPage } from './pages/LoginPage.jsx'
+import AdminPage from './pages/AdminPage.jsx';
 import '../src/styles/reset.css'
 
 
@@ -12,7 +13,8 @@ function App() {
     <Routes>
           < Route path='/student' element={<StudentPage />} />
           < Route path='/signup' element={<RegistrationPage />} />
-          < Route path='/login' element={<LoginPage />} />
+          < Route path='/signin' element={<LoginPage />} />
+          < Route path='/admin' element={<AdminPage />} />
     </Routes>
     </>
   )

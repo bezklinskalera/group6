@@ -1,15 +1,17 @@
-//Сторінка реєстрації
+// Сторінка реєстрації
 import React, { useState } from 'react';
-import { TextField, Button, Box, Typography, Container, MenuItem, Select, InputLabel, FormControl } from '@mui/material';
+import { TextField, Button, Box, Typography, Container, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
 import { Person, Email, Lock } from '@mui/icons-material';
 
 export const RegistrationPage = () => {
   const [formData, setFormData] = useState({
-    fullName: '',
+    lastName: '',
+    firstName: '',
+    middleName: '',
     email: '',
     password: '',
     confirmPassword: '',
-    role: '',
+    group: '',
   });
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
@@ -24,13 +26,13 @@ export const RegistrationPage = () => {
     setError('');
     setSuccess('');
 
-    if (!formData.fullName || !formData.email || !formData.password || !formData.confirmPassword || !formData.role) {
+    if (!formData.lastName || !formData.firstName || !formData.middleName || !formData.email || !formData.password || !formData.confirmPassword || !formData.group) {
       setError('Будь ласка, заповніть усі поля');
     } else if (formData.password !== formData.confirmPassword) {
       setError('Паролі не співпадають');
     } else {
       setSuccess('Реєстрація пройшла успішно!');
-      setFormData({ fullName: '', email: '', password: '', confirmPassword: '', role: '' });
+      setFormData({ lastName: '', firstName: '', middleName: '', email: '', password: '', confirmPassword: '', group: '' });
     }
   };
 
@@ -53,12 +55,42 @@ export const RegistrationPage = () => {
             margin="normal"
             required
             fullWidth
-            id="fullName"
-            label="Повне ім'я"
-            name="fullName"
-            autoComplete="name"
+            id="lastName"
+            label="Прізвище"
+            name="lastName"
+            autoComplete="family-name"
             autoFocus
-            value={formData.fullName}
+            value={formData.lastName}
+            onChange={handleChange}
+            InputProps={{
+              endAdornment: <Person sx={{ fontSize: 20, color: 'gray' }} />,
+            }}
+          />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            id="firstName"
+            label="Ім'я"
+            name="firstName"
+            autoComplete="given-name"
+            value={formData.firstName}
+            onChange={handleChange}
+            InputProps={{
+              endAdornment: <Person sx={{ fontSize: 20, color: 'gray' }} />,
+            }}
+          />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            id="middleName"
+            label="По-батькові"
+            name="middleName"
+            autoComplete="additional-name"
+            value={formData.middleName}
             onChange={handleChange}
             InputProps={{
               endAdornment: <Person sx={{ fontSize: 20, color: 'gray' }} />,
@@ -111,17 +143,18 @@ export const RegistrationPage = () => {
             }}
           />
           <FormControl fullWidth margin="normal">
-            <InputLabel id="role-label">Оберіть вашу роль</InputLabel>
+            <InputLabel id="group-label">Оберіть вашу групу</InputLabel>
             <Select
-              labelId="role-label"
-              id="role"
-              name="role"
-              value={formData.role}
+              labelId="group-label"
+              id="group"
+              name="group"
+              value={formData.group}
               onChange={handleChange}
-              label="Оберіть вашу роль"
+              label="Оберіть вашу групу"
             >
-              <MenuItem value="Студент">Студент</MenuItem>
-              <MenuItem value="Викладач">Викладач</MenuItem>
+              <MenuItem value="Група 1">Група 1</MenuItem>
+              <MenuItem value="Група 2">Група 2</MenuItem>
+              <MenuItem value="Група 3">Група 3</MenuItem>
             </Select>
           </FormControl>
           {error && <Typography color="error">{error}</Typography>}
