@@ -6,12 +6,20 @@ const student = new mongoose.Schema({
     type: Number,
     required: false
     },
-    full_name: {
+    Surname: {
     type: String,
     required: true
     },
-    ID_group: {
-    type: Number,
+    Name: {
+    type: String,
+    required: true
+    },
+    Patronymic: {
+    type: String,
+    required: true
+    },
+    group_code: {
+    type: String,
     required: true
     },
     birth_date: {
@@ -37,6 +45,9 @@ const student = new mongoose.Schema({
     }
 });
  
+// Додавання унікального індексу
+student.index({ Surname: 1, Name: 1, Patronymic: 1, group_code: 1 }, { unique: true });
+
 const Student = mongoose.model('Student', student);
 
 export default Student;

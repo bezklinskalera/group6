@@ -3,11 +3,11 @@ import mongoose from "mongoose";
 const group = new mongoose.Schema({
     ID_group: {
     type: Number,
-    required: true
+    required: false
     },
     group_code: {
     type: String,
-    required: false
+    required: true
     },
     total_number_of_students: {
     type: Number,
