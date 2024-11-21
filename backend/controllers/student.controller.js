@@ -49,6 +49,12 @@ export const signupStudent = async (req, res) => {
         const newStudent = new Student(studentData);
         await newStudent.save();
 
+        // Оновлення кількості студентів у групі
+        await Group.updateOne(
+            { group_code: studentData.group_code },
+            { $inc: { total_number_of_students: 1 } } // Інкремент лічильника
+        );
+
         res.status(201).json({ success: true, data: newStudent });
     } catch (error) {
         console.error("Error in createStudent:", error.message);
@@ -158,13 +164,35 @@ export const updateStudent = async (req, res) => {
 };
 
 export const deleteStudent = async (req, res) => {
-    const { id } = req.params;
+    let { id } = req.params;
 
-    try{
-        await Student.findByIdAndDelete(id);
-        res.status(200).json({ success: true, message: "Product deleted"});
-    } catch(error){
-        console.error("Error in deleting product:", error.message);
-        res.status(404).json({ success: false, message: "Product not found"});
+    try {
+        // Очищення ID від зайвих символів
+        id = id.trim();
+
+        // Перевірка, чи є ID коректним ObjectId
+        if (!mongoose.Types.ObjectId.isValid(id)) {
+            return res.status(400).json({ success: false, message: "Invalid student ID format." });
+        }
+
+        // Пошук студента для отримання group_code
+        const student = await Student.findById(id);
+        if (!student) {
+            return res.status(404).json({ success: false, message: "Student not found." });
+        }
+
+        // Видалення студента за ID
+        await student.deleteOne();
+
+        // Зменшення кількості студентів у групі
+        await Group.updateOne(
+            { group_code: student.group_code },
+            { $inc: { total_number_of_students: -1 } }
+        );
+
+        res.status(200).json({ success: true, message: "Student deleted successfully." });
+    } catch (error) {
+        console.error("Error in deleting student:", error.message);
+        res.status(500).json({ success: false, message: "Server Error." });
     }
 };
