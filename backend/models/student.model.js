@@ -2,10 +2,6 @@ import mongoose from "mongoose";
 
 
 const student = new mongoose.Schema({
-    ID_student: {
-    type: Number,
-    required: false
-    },
     Surname: {
     type: String,
     required: true

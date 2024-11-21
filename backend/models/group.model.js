@@ -1,10 +1,6 @@
 import mongoose from "mongoose";
 
 const group = new mongoose.Schema({
-    ID_group: {
-    type: Number,
-    required: false
-    },
     group_code: {
     type: String,
     required: true

@@ -1,7 +1,9 @@
 import mongoose from "mongoose";
+import Administrator from "../models/administrator.model.js";
 import Group from "../models/group.model.js";
 import Student from "../models/student.model.js";
 import Teacher from "../models/teacher.model.js";
+
 
 //Отримання даних всіх студентів
 export const getStudents = async (req, res) => {
@@ -83,13 +85,18 @@ export const signinUser = async (req, res) => {
         user = await Student.findOne({ Email });
         if (user) {
             userType = "student";
-        } else {
+        } else{
             // Перевірка, чи це викладач
             user = await Teacher.findOne({ Email });
             if (user) {
                 userType = "teacher";
+            } else {
+                user = await Administrator.findOne({ Email });
+                if (user) {
+                userType = "administrator";
+                }
             }
-        }
+        }  
 
         // Якщо користувача не знайдено
         if (!user) {
