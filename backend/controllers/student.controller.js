@@ -3,6 +3,8 @@ import Administrator from "../models/administrator.model.js";
 import Group from "../models/group.model.js";
 import Student from "../models/student.model.js";
 import Teacher from "../models/teacher.model.js";
+import Department from "../models/department.model.js";
+import Specialty from "../models/specialty.model.js";
 
 
 //Отримання даних всіх студентів
@@ -200,6 +202,26 @@ export const deleteStudent = async (req, res) => {
         res.status(200).json({ success: true, message: "Student deleted successfully." });
     } catch (error) {
         console.error("Error in deleting student:", error.message);
+        res.status(500).json({ success: false, message: "Server Error." });
+    }
+};
+
+export const getTeachersByDepartment = async (req, res) => {
+    const { nameDepartment } = req.params; 
+
+    try {
+        // Перевірка, чи існує кафедра з таким name_department
+        const department = await Department.findOne({ name_department: nameDepartment });
+        if (!department) {
+            return res.status(404).json({ success: false, message: "Department not found." });
+        }
+
+        // Пошук викладачів за name_department
+        const teacher = await Teacher.find({ name_department: nameDepartment });
+
+        res.status(200).json({ success: true, data: teacher });
+    } catch (error) {
+        console.error("Error in getTeachersByDepartment:", error.message);
         res.status(500).json({ success: false, message: "Server Error." });
     }
 };

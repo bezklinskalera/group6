@@ -13,8 +13,8 @@ const teacher = new mongoose.Schema({
     type: String,
     required: true
     },
-    id_department: {
-    type: Number,
+    name_department: {
+    type: String,
     required: true
     }, 
     Email: {
