@@ -1,0 +1,210 @@
+.wrapper{
+    font-family: "Montserrat", sans-serif;
+    min-height: 100%;
+    overflow: hidden;
+    font-size: 20px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    background-color: #F8F8F8;
+    scroll-behavior: smooth;
+}
+._container{
+    max-width: 1306px;
+    margin: 0px auto;
+    padding: 0px 15px;
+    box-sizing: content-box;
+}
+/*----------------PAGE------------*/
+.page{
+    flex: 1 1 auto;
+}
+.main-block{
+    padding: 50px 0px;
+}
+.main-block__title{
+    font-size: 26px;
+     line-height: calc(32 / 26 * 100%  );
+}
+.main-block__title:not(:first-child) {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.main-block__charts{
+    display: flex;
+    padding-top: 20px;
+}
+.chartsGroup {
+    justify-content: space-between; /* Розподілення простору між елементами */
+    /*display: flex;*/
+    /*gap: 20px; !* Відстань між елементами *!*/
+    /*flex-wrap: wrap; !* Для адаптивності *!*/
+}
+.groupSize{
+    width: 486px;
+    height: 370px;
+}
+/*.main-block__chart_group,*/
+/*.main-block__boxInfo,*/
+/*.main-block__chart_main {*/
+/*    margin-bottom: 20px; !* Відступи знизу для кожного блоку *!*/
+/*}*/
+
+@media (max-width: 768px) {
+    .chartsGroup {
+        flex-direction: column; /* Ставимо елементи в стовпчик для мобільних пристроїв */
+        gap: 15px; /* Зменшуємо відстань між блоками */
+    }
+
+    .main-block__chart_group,
+    .main-block__boxInfo,
+    .main-block__chart_main {
+        margin-bottom: 15px;
+    }
+}
+
+
+.main-block__chart {
+    background-color: #ffff;
+    border-radius: 15px;
+    padding: 40px 42px;
+}
+
+.main-block__chart_main{
+    width: 510px;
+    height: 370px;
+}
+.main-block__chart_main:not(:last-child) {
+    margin-right: 148px;
+}
+.main-block__chart_group{
+    /*width: 416px;*/
+    /*height: 360px;*/
+    background-color: #ffff;
+    border-radius: 15px;
+    padding: 40px 42px;
+}
+
+.custom-bar-chart {
+    width: 510px;
+    height: 370px;
+}
+.containerForPieChart{
+    width: 332px;
+    height: 362px;
+}
+.containerForBarChart{
+    width: 402px;
+    height: 362px;
+}
+.custom-pie-chart{
+    width: 332px;
+    height: 380px;
+}
+
+
+
+
+
+.chart-label {
+    margin-top: 10px;
+    text-align: center; /* Выравнивание по центру */
+    font-size: 20px; /* Размер шрифта */
+}
+
+@media (max-width: 768px) {
+    .main-block__chart {
+        width: 300px;
+        height: 217px;
+    }
+    .main-block__chart:not(:last-child) {
+
+        margin-right: 10px;
+
+    }
+}
+@media (max-width: 425px) {
+    .main-block__chart {
+        /*width: 200px;*/
+        /*height: 117px;*/
+    }
+    .main-block__charts{
+        flex-direction: column;
+    }
+    .main-block__chart:not(:last-child) {
+
+        margin: 0px 0px 20px 0px ;
+
+    }
+}
+
+/*------------BOX INFO-------------*/
+.main-block__boxInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #027BFF;
+    color: white;
+    border-radius: 10px;
+    margin: 150px 5px 0px 5px;
+    padding: 10px 20px;
+    width: 357px;
+    height: 110px;
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+.main-block__text{
+    padding-top: 15px;
+}
+.main-block__number {
+    font-size: 64px;
+}
+
+.main-block__caption {
+    font-size: 24px;
+    margin-left: 5px;
+}
+
+.main-block__iconboxInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.table-container{
+    font-family: "Montserrat", sans-serif;
+}
+/*--------MEDIA------------*/
+@media (max-width: 1024px) {
+    .main-block__chart {
+        width: 360px;
+        height: 266px;
+    }
+    .chart-label {
+        font-size: 16px; /* Размер шрифта */
+    }
+    .containerForPieChart{
+        width: 280px;
+        height: 218px;
+    }
+    .main-block__chart_group{
+        padding: 20px 22px;
+    }
+    .containerForBarChart{
+        width: 360px;
+        height: 218px;
+    }
+    .main-block__boxInfo {
+        margin: 100px 5px 0px 5px;
+    }
+    .main-block__number {
+        font-size: 40px;
+    }
+
+    .main-block__caption {
+        font-size: 16px;
+        margin-left: 5px;
+    }
+    .chart-label {
+        /*margin-top: 10px;*/
+    }
+}
