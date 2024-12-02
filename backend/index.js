@@ -1,11 +1,19 @@
 import express from 'express';
+import dotenv from "dotenv";
+import { connectDB } from "./config/db.js";
+
+import studentRoutes from "./routes/student.route.js";
+
+
+dotenv.config();
 
 const app = express();
 
-app.listen(8084, (err) => {
-    if (err) {
-        return console.log(err);
-    }
+app.use(express.json());
 
-    console.log("Server Ok");
+app.use("/api/students", studentRoutes);
+
+app.listen(5500, () => {
+    connectDB();
+    console.log("Server started at http://localhost:5500");
 });
