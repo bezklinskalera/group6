@@ -50,3 +50,31 @@ test('посилання на "Забули пароль?" та "Зареєст�
 });
 
 
+test('перевірка обробки submit без помилок', () => {
+  render(<LoginPage />);
+  
+  // Заповнюємо поля форми
+  fireEvent.change(screen.getByLabelText(/Електронна пошта/i), { target: { value: 'test@example.com' } });
+  fireEvent.change(screen.getByLabelText(/Пароль/i), { target: { value: 'password123' } });
+
+  // Мокування функції setError
+  const mockSetError = jest.fn();
+  jest.spyOn(React, 'useState').mockImplementation((init) => [init, mockSetError]);
+  
+  // Клікаємо на кнопку "Увійти"
+  fireEvent.click(screen.getByRole('button', { name: /Увійти/i }));
+
+  // Перевірка, чи викликається setError
+  expect(mockSetError).not.toHaveBeenCalled();
+});
+
+
+
+
+
+
+
+
+
+
+
