@@ -8,3 +8,5 @@ module.exports = {
     '^.+\\.jsx?$': 'babel-jest',
   },
 };
+
+/*nnkj*/
