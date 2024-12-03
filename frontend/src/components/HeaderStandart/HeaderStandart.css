@@ -1,0 +1,85 @@
+._container {
+    max-width: 1306px;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: content-box;
+}
+
+.header {
+    width: 100%; /* Фиксированное положение для видимости при скролле */
+    top: 0;
+    left: 0;
+    z-index: 50;
+    background-color: #ffffff; /* Белый цвет фона */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    margin-bottom: 2vh;
+}
+
+.header__container {
+    display: flex;
+    min-height: 70px; /* Уменьшенная высота */
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px; /* Добавлены отступы */
+}
+
+.header__logo {
+    height: 50px; /* Размер логотипа */
+}
+
+.header__menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    padding: 5px 0;
+}
+
+.menu__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.menu__item {
+    margin: 0 20px; /* Расстояние между элементами */
+}
+
+.menu__item:not(:last-child) {
+    margin-right: 40px; /* Отступ для всех, кроме последнего */
+}
+
+.menu__link {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.menu__link:hover {
+    color: #007BFF; /* Цвет ссылки при наведении */
+}
+
+.header__icon {
+    height: 30px; /* Размер иконки */
+    cursor: pointer;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    .menu__item:not(:last-child) {
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 425px) {
+    .menu__list {
+        margin: 0 10px;
+        justify-content: center;
+    }
+    .menu__link {
+        font-size: 14px; /* Уменьшенный размер текста */
+    }
+}
