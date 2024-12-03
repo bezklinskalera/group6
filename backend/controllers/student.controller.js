@@ -138,6 +138,11 @@ export const signinUser = async (req, res) => {
 export const getStudentsByGroup = async (req, res) => {
     const { groupCode } = req.params; // Отримання group_code з параметрів URL
 
+    // Перевірка наявності groupCode
+    if (!groupCode) {
+        return res.status(400).json({ success: false, message: "Group code is required." });
+    }
+
     try {
         // Перевірка, чи існує група з таким group_code
         const group = await Group.findOne({ group_code: groupCode });
@@ -155,7 +160,7 @@ export const getStudentsByGroup = async (req, res) => {
     }
 };
 
-export const updateStudent = async (req, res) => {
+/*export const updateStudent = async (req, res) => {
     const {id} = req.params;
 
     const student = req.body;
@@ -170,9 +175,9 @@ export const updateStudent = async (req, res) => {
     } catch (error){
         res.status(500).json({success: false, message: "Server Error"})
     }
-};
+};*/
 
-export const deleteStudent = async (req, res) => {
+/*export const deleteStudent = async (req, res) => {
     let { id } = req.params;
 
     try {
@@ -204,9 +209,9 @@ export const deleteStudent = async (req, res) => {
         console.error("Error in deleting student:", error.message);
         res.status(500).json({ success: false, message: "Server Error." });
     }
-};
+};*/
 
-export const getTeachersByDepartment = async (req, res) => {
+/*export const getTeachersByDepartment = async (req, res) => {
     const { nameDepartment } = req.params; 
 
     try {
@@ -224,4 +229,4 @@ export const getTeachersByDepartment = async (req, res) => {
         console.error("Error in getTeachersByDepartment:", error.message);
         res.status(500).json({ success: false, message: "Server Error." });
     }
-};
+};*/
