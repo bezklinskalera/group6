@@ -119,7 +119,7 @@ export const RegistrationPage = () => {
             name="password"
             label="Пароль"
             type="password"
-            id="password"
+            id="password1"
             autoComplete="new-password"
             value={formData.password}
             onChange={handleChange}
@@ -133,7 +133,7 @@ export const RegistrationPage = () => {
             required
             fullWidth
             name="confirmPassword"
-            label="Підтвердьте пароль"
+            label="Підтвердьте"
             type="password"
             id="confirmPassword"
             value={formData.confirmPassword}
