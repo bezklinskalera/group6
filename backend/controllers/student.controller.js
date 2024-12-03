@@ -13,7 +13,7 @@ export const getStudents = async (req, res) => {
         const students = await Student.find({});
         res.status(200).json({ success: true, data: students});
     } catch(error){
-        console.log("error in fetching products:", error.message);
+        //console.log("error in fetching products:", error.message);
         res.status(500).json({ success: false, message: "Server Error"});
     }
 };
