@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1733255496838" clover="3.2.0">
-  <project timestamp="1733255496838" name="All files">
-    <metrics statements="79" coveredstatements="70" conditionals="36" coveredconditionals="30" methods="4" coveredmethods="4" elements="119" coveredelements="104" complexity="0" loc="79" ncloc="79" packages="2" files="7" classes="7"/>
+<coverage generated="1733317300871" clover="3.2.0">
+  <project timestamp="1733317300871" name="All files">
+    <metrics statements="90" coveredstatements="81" conditionals="40" coveredconditionals="34" methods="5" coveredmethods="5" elements="135" coveredelements="120" complexity="0" loc="90" ncloc="90" packages="2" files="7" classes="7"/>
     <package name="controllers">
-      <metrics statements="66" coveredstatements="57" conditionals="36" coveredconditionals="30" methods="4" coveredmethods="4"/>
-      <file name="student.controller.js" path="E:\Git\project1\group6\backend\controllers\student.controller.js">
-        <metrics statements="66" coveredstatements="57" conditionals="36" coveredconditionals="30" methods="4" coveredmethods="4"/>
-        <line num="11" count="4" type="stmt"/>
+      <metrics statements="77" coveredstatements="68" conditionals="40" coveredconditionals="34" methods="5" coveredmethods="5"/>
+      <file name="student.controller.js" path="C:\Users\HOME\Documents\GitHub\group6\backend\controllers\student.controller.js">
+        <metrics statements="77" coveredstatements="68" conditionals="40" coveredconditionals="34" methods="5" coveredmethods="5"/>
+        <line num="11" count="5" type="stmt"/>
         <line num="12" count="2" type="stmt"/>
         <line num="13" count="2" type="stmt"/>
         <line num="14" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
-        <line num="22" count="4" type="stmt"/>
+        <line num="22" count="5" type="stmt"/>
         <line num="23" count="4" type="stmt"/>
         <line num="26" count="4" type="cond" truecount="8" falsecount="0"/>
         <line num="27" count="1" type="stmt"/>
@@ -31,7 +30,7 @@
         <line num="65" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="66" count="0" type="stmt"/>
         <line num="68" count="0" type="stmt"/>
-        <line num="74" count="4" type="stmt"/>
+        <line num="74" count="5" type="stmt"/>
         <line num="75" count="4" type="stmt"/>
         <line num="78" count="4" type="cond" truecount="3" falsecount="1"/>
         <line num="79" count="0" type="stmt"/>
@@ -60,7 +59,7 @@
         <line num="131" count="1" type="stmt"/>
         <line num="133" count="0" type="stmt"/>
         <line num="134" count="0" type="stmt"/>
-        <line num="138" count="4" type="stmt"/>
+        <line num="138" count="5" type="stmt"/>
         <line num="139" count="4" type="stmt"/>
         <line num="142" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="143" count="1" type="stmt"/>
@@ -72,40 +71,52 @@
         <line num="156" count="1" type="stmt"/>
         <line num="158" count="1" type="stmt"/>
         <line num="159" count="1" type="stmt"/>
+        <line num="214" count="5" type="stmt"/>
+        <line num="215" count="4" type="stmt"/>
+        <line num="217" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="218" count="1" type="stmt"/>
+        <line num="221" count="3" type="stmt"/>
+        <line num="223" count="3" type="stmt"/>
+        <line num="224" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="225" count="1" type="stmt"/>
+        <line num="229" count="1" type="stmt"/>
+        <line num="231" count="1" type="stmt"/>
+        <line num="233" count="1" type="stmt"/>
+        <line num="234" count="1" type="stmt"/>
       </file>
     </package>
     <package name="models">
       <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="administrator.model.js" path="E:\Git\project1\group6\backend\models\administrator.model.js">
+      <file name="administrator.model.js" path="C:\Users\HOME\Documents\GitHub\group6\backend\models\administrator.model.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="30" count="4" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="30" count="5" type="stmt"/>
       </file>
-      <file name="department.model.js" path="E:\Git\project1\group6\backend\models\department.model.js">
+      <file name="department.model.js" path="C:\Users\HOME\Documents\GitHub\group6\backend\models\department.model.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="14" count="4" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="14" count="5" type="stmt"/>
       </file>
-      <file name="group.model.js" path="E:\Git\project1\group6\backend\models\group.model.js">
+      <file name="group.model.js" path="C:\Users\HOME\Documents\GitHub\group6\backend\models\group.model.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="34" count="4" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="34" count="5" type="stmt"/>
       </file>
-      <file name="specialty.model.js" path="E:\Git\project1\group6\backend\models\specialty.model.js">
+      <file name="specialty.model.js" path="C:\Users\HOME\Documents\GitHub\group6\backend\models\specialty.model.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="18" count="4" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="18" count="5" type="stmt"/>
       </file>
-      <file name="student.model.js" path="E:\Git\project1\group6\backend\models\student.model.js">
+      <file name="student.model.js" path="C:\Users\HOME\Documents\GitHub\group6\backend\models\student.model.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="45" count="4" type="stmt"/>
-        <line num="47" count="4" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="45" count="5" type="stmt"/>
+        <line num="47" count="5" type="stmt"/>
       </file>
-      <file name="teacher.model.js" path="E:\Git\project1\group6\backend\models\teacher.model.js">
+      <file name="teacher.model.js" path="C:\Users\HOME\Documents\GitHub\group6\backend\models\teacher.model.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="30" count="4" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="30" count="5" type="stmt"/>
       </file>
     </package>
   </project>

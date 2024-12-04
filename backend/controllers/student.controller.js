@@ -211,8 +211,12 @@ export const getStudentsByGroup = async (req, res) => {
     }
 };*/
 
-/*export const getTeachersByDepartment = async (req, res) => {
+export const getTeachersByDepartment = async (req, res) => {
     const { nameDepartment } = req.params; 
+
+    if (!nameDepartment) {
+        return res.status(400).json({ success: false, message: "Department name is required." });
+    }
 
     try {
         // Перевірка, чи існує кафедра з таким name_department
@@ -229,4 +233,4 @@ export const getStudentsByGroup = async (req, res) => {
         console.error("Error in getTeachersByDepartment:", error.message);
         res.status(500).json({ success: false, message: "Server Error." });
     }
-};*/
+};

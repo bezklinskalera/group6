@@ -46,6 +46,7 @@ describe("getStudentsByGroup", () => {
         };
 
         await getStudentsByGroup(req, res);
+        
 
         expect(Group.findOne).toHaveBeenCalledWith({ group_code: "G123" });
         expect(res.status).toHaveBeenCalledWith(404);
