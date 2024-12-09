@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1733317300871" clover="3.2.0">
-  <project timestamp="1733317300871" name="All files">
+<coverage generated="1733749978579" clover="3.2.0">
+  <project timestamp="1733749978579" name="All files">
     <metrics statements="90" coveredstatements="81" conditionals="40" coveredconditionals="34" methods="5" coveredmethods="5" elements="135" coveredelements="120" complexity="0" loc="90" ncloc="90" packages="2" files="7" classes="7"/>
     <package name="controllers">
       <metrics statements="77" coveredstatements="68" conditionals="40" coveredconditionals="34" methods="5" coveredmethods="5"/>
-      <file name="student.controller.js" path="C:\Users\HOME\Documents\GitHub\group6\backend\controllers\student.controller.js">
+      <file name="student.controller.js" path="D:\Курс_3\Семестр_1\Якість та тестування ПЗ\Група_6\group6\backend\controllers\student.controller.js">
         <metrics statements="77" coveredstatements="68" conditionals="40" coveredconditionals="34" methods="5" coveredmethods="5"/>
         <line num="11" count="5" type="stmt"/>
         <line num="12" count="2" type="stmt"/>
@@ -87,33 +87,33 @@
     </package>
     <package name="models">
       <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="administrator.model.js" path="C:\Users\HOME\Documents\GitHub\group6\backend\models\administrator.model.js">
+      <file name="administrator.model.js" path="D:\Курс_3\Семестр_1\Якість та тестування ПЗ\Група_6\group6\backend\models\administrator.model.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="3" count="5" type="stmt"/>
         <line num="30" count="5" type="stmt"/>
       </file>
-      <file name="department.model.js" path="C:\Users\HOME\Documents\GitHub\group6\backend\models\department.model.js">
+      <file name="department.model.js" path="D:\Курс_3\Семестр_1\Якість та тестування ПЗ\Група_6\group6\backend\models\department.model.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="3" count="5" type="stmt"/>
         <line num="14" count="5" type="stmt"/>
       </file>
-      <file name="group.model.js" path="C:\Users\HOME\Documents\GitHub\group6\backend\models\group.model.js">
+      <file name="group.model.js" path="D:\Курс_3\Семестр_1\Якість та тестування ПЗ\Група_6\group6\backend\models\group.model.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="3" count="5" type="stmt"/>
         <line num="34" count="5" type="stmt"/>
       </file>
-      <file name="specialty.model.js" path="C:\Users\HOME\Documents\GitHub\group6\backend\models\specialty.model.js">
+      <file name="specialty.model.js" path="D:\Курс_3\Семестр_1\Якість та тестування ПЗ\Група_6\group6\backend\models\specialty.model.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="3" count="5" type="stmt"/>
         <line num="18" count="5" type="stmt"/>
       </file>
-      <file name="student.model.js" path="C:\Users\HOME\Documents\GitHub\group6\backend\models\student.model.js">
+      <file name="student.model.js" path="D:\Курс_3\Семестр_1\Якість та тестування ПЗ\Група_6\group6\backend\models\student.model.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="4" count="5" type="stmt"/>
         <line num="45" count="5" type="stmt"/>
         <line num="47" count="5" type="stmt"/>
       </file>
-      <file name="teacher.model.js" path="C:\Users\HOME\Documents\GitHub\group6\backend\models\teacher.model.js">
+      <file name="teacher.model.js" path="D:\Курс_3\Семестр_1\Якість та тестування ПЗ\Група_6\group6\backend\models\teacher.model.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="3" count="5" type="stmt"/>
         <line num="30" count="5" type="stmt"/>

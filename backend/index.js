@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import { connectDB } from "./config/db.js";
 
 import studentRoutes from "./routes/student.route.js";
+import lessonRoutes from "./routes/lesson.route.js";
 
 
 dotenv.config();
@@ -12,6 +13,7 @@ const app = express();
 app.use(express.json());
 
 app.use("/api/students", studentRoutes);
+app.use("/api/lessons", lessonRoutes);
 
 app.listen(5500, () => {
     connectDB();

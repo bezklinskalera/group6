@@ -5,7 +5,40 @@ import Student from "../models/student.model.js";
 import Teacher from "../models/teacher.model.js";
 import Department from "../models/department.model.js";
 import Specialty from "../models/specialty.model.js";
+import Lesson from "../models/lesson.model.js";
+import Subject from "../models/subject.model.js";
 
+// отримання даних про предмет і викладача
+export const getSubjectWithTeacherByName = async (req, res) => {
+    const { subjectName } = req.params; // Отримуємо назву предмета з параметрів URL
+
+    try {
+        // Знаходимо предмет за його назвою і заповнюємо дані викладача
+        const subject = await Subject.findOne({ Subject_name: subjectName }).populate("Teacher");
+
+        // Якщо предмет не знайдено
+        if (!subject) {
+            return res.status(404).json({ success: false, message: "Subject not found." });
+        }
+
+        // Формуємо відповідь із даними про предмет і викладача
+        res.status(200).json({
+            success: true,
+            data: {
+                Subject: {
+                    _id: subject._id,
+                    Subject_name: subject.Subject_name,
+                    Number_of_credits: subject.Number_of_credits,
+                    Course: subject.Course
+                },
+                Teacher: subject.Teacher // Усі поля викладача
+            }
+        });
+    } catch (error) {
+        console.error("Error in getSubjectWithTeacherByName:", error.message);
+        res.status(500).json({ success: false, message: "Server Error." });
+    }
+};
 
 //Отримання даних всіх студентів
 export const getStudents = async (req, res) => {
