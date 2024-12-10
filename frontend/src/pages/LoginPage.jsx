@@ -4,7 +4,7 @@ import { TextField, Button, Box, Typography, Container, Checkbox, FormControlLab
 import { Email, Lock } from "@mui/icons-material";
 import HeaderStandart from "../components/HeaderStandart/HeaderStandart"; // Импортируем хедер
 import { useLoginMutation } from "../slices/userApiSlice";  // Імпортуємо хук для login
-import { setCredetials } from "../slices/authSlice";  // Імпортуємо action для збереження даних в Redux
+import { setCredentials } from "../slices/authSlice";  // Імпортуємо action для збереження даних в Redux
 import { useDispatch } from "react-redux";  // Імпортуємо dispatch для відправки action
 
 export const LoginPage = () => {
@@ -41,7 +41,7 @@ export const LoginPage = () => {
         }).unwrap();
 
         if (response.success) {
-          dispatch(setCredetials(response.data));  // Зберігаємо дані користувача в Redux
+          dispatch(setCredentials(response.data));  // Зберігаємо дані користувача в Redux
 
           // Перенаправлення в залежності від типу користувача
           if (response.userType === "student") {
