@@ -2,8 +2,9 @@ import mongoose from "mongoose";
 
 const lesson = new mongoose.Schema({
     ID_student: {
-    type: String,
-    required: true
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Student",
+        required: true
     },
     Date_of_lesson: {
     type: String,

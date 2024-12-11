@@ -124,4 +124,65 @@ export const getLessonDetailsWithStudentAssessments = async (req, res) => {
     }
 };
 
+export const getTotalScoresForStudent = async (req, res) => {
+    const { studentId } = req.params; // Отримуємо ID студента з параметрів URL
 
+    try {
+        // Використовуємо агрегацію для знаходження предметів і оцінок студента
+        const totalScores = await Lesson.aggregate([
+            // Фільтруємо за ID студента
+            {
+                $match: {
+                    ID_student: new mongoose.Types.ObjectId(studentId) // Використовуємо "new" для конвертації в ObjectId
+                }
+            },
+            // Об'єднуємо з колекцією Subject, щоб отримати деталі про предмет
+            {
+                $lookup: {
+                    from: 'subjects', // Назва колекції предметів
+                    localField: 'Subject_name', // Поле в колекції Lesson
+                    foreignField: 'Subject_name', // Поле в колекції Subject
+                    as: 'subjectDetails' // Назва для масиву об'єднаних даних
+                }
+            },
+            {
+                $unwind: '$subjectDetails' // Розгортаємо масив subjectDetails
+            },
+            // Групуємо по предметах і підсумовуємо оцінки
+            {
+                $group: {
+                    _id: '$Subject_name', // Групуємо по назві предмета
+                    totalScore: { $sum: '$Assessment' }, // Підсумовуємо оцінки
+                    subjectDetails: { $first: '$subjectDetails' } // Додаємо деталі предмета
+                }
+            },
+            // Сортуємо по алфавітному порядку за назвою предмета
+            {
+                $sort: { _id: 1 }
+            }
+        ]);
+
+        if (totalScores.length === 0) {
+            return res.status(404).json({
+                success: false,
+                message: "No subjects or assessments found for the student."
+            });
+        }
+
+        // Формуємо відповідь для клієнта
+        res.status(200).json({
+            success: true,
+            data: totalScores.map(subject => ({
+                Subject: subject._id, // Назва предмета
+                TotalScore: subject.totalScore, // Підсумкова оцінка
+                SubjectDetails: subject.subjectDetails // Деталі предмета
+            }))
+        });
+    } catch (error) {
+        console.error("Error in getTotalScoresForStudent:", error.message);
+        res.status(500).json({
+            success: false,
+            message: "Server Error"
+        });
+    }
+};
