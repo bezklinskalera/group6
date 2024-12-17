@@ -18,11 +18,23 @@ export const TeacherPage = () => {
     ];
     // Фільтруємо дані для групи ТВ-21
     const dataForTWB21 = dataAttestation.find(item => item.name === 'ТВ-21');
+    // Фільтруємо дані для групи ТВ-21
+    const dataForTWB22 = dataAttestation.find(item => item.name === 'ТВ-22');
+    // Фільтруємо дані для групи ТВ-21
+    const dataForTWB23 = dataAttestation.find(item => item.name === 'ТВ-23');
 
     // Дані для кругової діаграми (атестація для ТВ-21)
-    const pieData = [
+    const pieDataFor21 = [
         { label: 'Атестовані', value: dataForTWB21.hasAttestation },
         { label: 'Неатестовані', value: dataForTWB21.noAttestation },
+    ];
+    const pieDataFor22 = [
+        { label: 'Атестовані', value: dataForTWB22.hasAttestation },
+        { label: 'Неатестовані', value: dataForTWB22.noAttestation },
+    ];
+    const pieDataFor23 = [
+        { label: 'Атестовані', value: dataForTWB22.hasAttestation },
+        { label: 'Неатестовані', value: dataForTWB22.noAttestation },
     ];
 
     const seriesAttestation = [
@@ -117,7 +129,7 @@ export const TeacherPage = () => {
                 <main className="page">
                     <div className="page__main-block main-block">
                         <div className="main-block__container _container">
-                            <h1 className="main-block__title">Основи розробки трансляторів</h1>
+                            <h1 id="all-groups" className="main-block__title">Основи розробки трансляторів</h1>
                             <div className="main-block__charts">
                                 <div className="main-block__chart main-block__chart_main">
                                     <BarChart
@@ -169,7 +181,7 @@ export const TeacherPage = () => {
                                                     arcLabel: (item) => `${item.value}`,
                                                     arcLabelMinAngle: 35,
                                                     arcLabelRadius: '60%',
-                                                    data: pieData,
+                                                    data: pieDataFor21,
                                                 },
                                             ]}
                                             colors={colors}
@@ -239,7 +251,7 @@ export const TeacherPage = () => {
                                                     arcLabel: (item) => `${item.value}`,
                                                     arcLabelMinAngle: 35,
                                                     arcLabelRadius: '60%',
-                                                    data: pieData,
+                                                    data: pieDataFor22,
                                                 },
                                             ]}
                                             colors={colors}
@@ -259,7 +271,7 @@ export const TeacherPage = () => {
                                 </div>
                                 <div className="main-block__boxInfo">
                                     <div className="main-block__text">
-                                        <span className="main-block__number">30</span>
+                                        <span className="main-block__number">27</span>
                                         <span className="main-block__caption">студентів</span>
                                     </div>
                                     <div className="main-block__iconboxInfo">
@@ -309,7 +321,7 @@ export const TeacherPage = () => {
                                                     arcLabel: (item) => `${item.value}`,
                                                     arcLabelMinAngle: 35,
                                                     arcLabelRadius: '60%',
-                                                    data: pieData,
+                                                    data: pieDataFor23,
                                                 },
                                             ]}
                                             colors={colors}
@@ -329,7 +341,7 @@ export const TeacherPage = () => {
                                 </div>
                                 <div className="main-block__boxInfo">
                                     <div className="main-block__text">
-                                        <span className="main-block__number">30</span>
+                                        <span className="main-block__number">28</span>
                                         <span className="main-block__caption">студентів</span>
                                     </div>
                                     <div className="main-block__iconboxInfo">

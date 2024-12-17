@@ -5,7 +5,6 @@ import {BlockMenuStudent} from "../components/BlockMenuStudent/BlockMenuStudent"
 import {useSelector} from "react-redux";
 import {Bar} from "react-chartjs-2";
 import "../styles/StudentPage.css";
-import calendar from '../images/calendar.jpg';
 
 const barChartData = {
     labels: ["Jan", "Feb", "Mar", "Apr", "May"],
@@ -41,7 +40,7 @@ export const StudentPage = () => {
     //Це оголошення змінної currentUser, яка буде містити результат виклику useSelector.
     // У цьому випадку — об'єкт користувача, взятий із глобального стану Redux.
 
-    // const currentUser = useSelector((state) => state.auth?.userInfo);
+    const currentUser = useSelector((state) => state.auth?.userInfo);
 
 
     const chartsData = [
@@ -114,7 +113,7 @@ export const StudentPage = () => {
         <div className="main">
             <BlockMenuStudent menuItems={subjectsForMenu}/>
             <div className="centralBlock">
-                <p className="welcomeText">Вітаємо, Катерино</p>
+              <p className="welcomeText">Вітаємо, {currentUser.Name}</p>
                 <div className="card">
                     <div className="card-header">
                         <h3 className="card-title">
@@ -169,19 +168,6 @@ export const StudentPage = () => {
                         marginTop: "20px",
                     }}
                 >
-
-
-                    {/* Image */}
-                    {/*<div style={{flex: 1, textAlign: "center"}}>*/}
-                    {/*    <img*/}
-                    {/*        src={calendar}*/}
-                    {/*        alt="Calendar"*/}
-                    {/*        style={{*/}
-                    {/*            width: "600px",*/}
-                    {/*            height: "350px",*/}
-                    {/*        }}*/}
-                    {/*    />*/}
-                    {/*</div>*/}
                 </div>
             </div>
         </div>

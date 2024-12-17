@@ -1,10 +1,11 @@
 
-._container{
+._container {
     max-width: 1306px;
     margin: 0px auto;
     padding: 0px 15px;
     box-sizing: content-box;
 }
+
 .header {
     position: fixed;
     width: 100%;
@@ -13,55 +14,82 @@
     z-index: 50;
 }
 
-.header__container{
+.header__container {
     display: flex;
     min-height: 100px;
     align-items: center;
     justify-content: space-between;
 
 }
-.header__logo{
+
+.header__logo {
 
 }
-.header__menu{
 
+.header__menu {
+    display: flex;
+    justify-content: center; /* Центрує меню */
+    align-items: center; /* Центрує елементи по вертикалі */
+    width: 100%; /* Забезпечує ширину для центрування */
 }
-.menu{
-    padding: 5px 0px ;
+
+
+.menu {
+    padding: 5px 0px;
 }
-.menu__list{
+
+/*.menu__list {*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+
+
+/*}*/
+.menu__list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center; /* Вирівнювання елементів по центру */
+    align-items: center; /* Вирівнювання елементів по вертикалі */
+    gap: 20px; /* Проміжки між елементами */
+    padding: 0; /* Забирає зайві відступи */
+    margin: 0 auto; /* Центрує список */
+    list-style: none; /* Вимикає стилі списку */
+}
+
+.menu__item {
 
 }
-.menu__item{
 
-}
-.menu__item:not(:last-child){
+.menu__item:not(:last-child) {
     margin: 0px 100px 0px 0px;
 }
+
 @media (max-width: 768px) {
-    .menu__item:not(:last-child){
+    .menu__item:not(:last-child) {
         margin: 0px 50px 0px 0px;
     }
-    
+
 }
+
 @media (max-width: 425px) {
-    .menu__item:not(:last-child){
+    .menu__item:not(:last-child) {
         margin: 0px 50px 0px 0px;
     }
-    .menu__list{
+
+    .menu__list {
         margin: 0px 10px 0px 10px;
         justify-content: center;
     }
-    .menu__link{
+
+    .menu__link {
         font-size: 16px;
     }
 }
-.menu__link{
+
+.menu__link {
     color: black;
-    line-height: 171% ;
+    line-height: 171%;
 }
-.header__icon{
+
+.header__icon {
 
 }

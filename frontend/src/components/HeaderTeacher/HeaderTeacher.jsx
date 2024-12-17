@@ -1,6 +1,6 @@
 import React from "react";
 import "./HeaderTeacher.css";
-import logo from "../../images/LOGO.svg"; // Імпорт логотипа
+import logo from '../../images/logoSvg.svg'
 import icon_account from "../../images/Icon_account.svg"; // Імпорт логотипа
 const HeaderTeacher = () => {
     return (

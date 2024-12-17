@@ -23,9 +23,9 @@
     padding: 0 15px; /* Добавлены отступы */
 }
 
-.header__logo {
-    height: 50px; /* Размер логотипа */
-}
+/*.header__logo {*/
+/*    height: 50px; !* Размер логотипа *!*/
+/*}*/
 
 .header__menu {
     display: flex;

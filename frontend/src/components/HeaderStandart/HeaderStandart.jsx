@@ -1,6 +1,6 @@
 import React from "react";
 import "./HeaderStandart.css"; // CSS для стилизации
-import logo from "../../images/LOGO.svg";
+import logo from '../../images/logoSvg.svg'
 import iconAccount from "../../images/Icon_account.svg";
 
 const Header = () => {
