@@ -10,3 +10,45 @@
     padding-top: 10px;
     padding-left: 10px;
 }
+.vertical-header {
+    /*width: 280px; !* Ширина меню *!*/
+    background-color: #FFFFFF; /* Колір фону меню */
+    padding: 20px;
+    /*top: 0;*/
+    /*left: 0;*/
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 100vh;
+    position: sticky; /* Keeps the menu fixed */
+    top: 0;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+.menu-item {
+    width: 100%; /* Вся ширина меню */
+    margin: 15px 0px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.menu-item a {
+    color: #2c3e50; /* Колір тексту меню */
+    text-decoration: none;
+    display: block; /* Перетворити посилку в блок для цілої ширини */
+}
+
+.menu-item.active::after {
+    content: '';
+    position: relative;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: #007BFF;
+}

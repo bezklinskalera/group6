@@ -8,6 +8,7 @@
     flex-direction: column;
     background-color: #F8F8F8;
     scroll-behavior: smooth;
+    padding-top: 70px;
 }
 ._container{
     max-width: 1306px;

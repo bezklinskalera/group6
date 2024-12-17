@@ -1,12 +1,45 @@
+/*.wrapperStudent {*/
+/*    font-family: "Montserrat", sans-serif;*/
+/*    min-height: 100%;*/
+/*    overflow: hidden;*/
+/*    font-size: 20px;*/
+/*    color: black;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    background-color: #F8F8F8;*/
+/*    scroll-behavior: smooth;*/
+/*}*/
+
+/*.pageStudent{*/
+/*    background-color: #F8F8F8;*/
+/*    height: 100%; !* Повна висота вікна *!*/
+/*    padding: 35px 35px;*/
+/*}*/
+
 .main {
-    display: flex;
-    
+    display: flex; /* Flexbox layout for sidebar and content */
     font-family: "Montserrat", sans-serif;
+    min-height: 100vh;
   }
-  
+.wrapperStudentPage{
+    font-family: "Montserrat", sans-serif;
+    min-height: 100%;
+    overflow: hidden;
+    font-size: 20px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    background-color: #F8F8F8;
+    scroll-behavior: smooth;
+    padding-top: 70px;
+}
 .centralBlock{
-  display: flex;
-  flex-direction: column;
+  /*display: flex;*/
+  /*flex-direction: column;*/
+    flex: 1; /* Fills the rest of the space */
+    background-color: #f8f8f8;
+    padding: 20px;
+    overflow-y: auto;
 }
 
 .welcomeText {
@@ -16,7 +49,7 @@
    /* Відступ між текстом і діаграмами */
 }
 
-  /* .subjectsPieCharts {
+.subjectsPieCharts {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 50px;
@@ -24,18 +57,50 @@
     width: 100%;
     font-size: clamp(10px, 5vw, 15px);
     text-align: center;
-  }
-  
-  .pieChartContainer {
+}
+.card-title {
+    font-size: 30px; /* Змінює розмір шрифту */
+    /*font-weight: bold; !* Робить шрифт жирним (опціонально) *!*/
+    /*padding: 0 100px;*/
+    margin-bottom: 40px/* Додає вертикальні відступи (паддинги) */
+    /*text-align: center; !* Центрує текст заголовка (опціонально) *!*/
+}
+.title_subject{
+    margin-top: 40px;
+    font-size: 30px;
+}
+.knob-container {
+    display: flex; /* Використовуємо flexbox для рядків */
+    flex-wrap: wrap; /* Елементи будуть переноситися на новий ряд */
+    justify-content: space-between; /* Рівномірно розподілити елементи */
+    gap: 20px; /* Простір між елементами */
+}
+
+.knob-item {
+    flex: 0 0 calc(50% - 20px); /* 50% ширини мінус відступ */
+    text-align: center; /* Центрувати елементи всередині */
+    margin-bottom: 20px; /* Відступ між рядами */
+}
+.main-block__chart_student {
+    background-color: #ffff;
+    border-radius: 15px;
+    padding: 40px 42px;
+}
+
+.main-block__chart_main_student{
+    width: 900px;
+    height: 300px;
+}
+.pieChartContainer {
     position: relative;
     width: 100%;
     max-width: 400px;
     height: 200px;
-  }
-   */
+}
 
    .subjectsPieCharts {
     display: flex;
+       flex-direction: row;
     flex-wrap: wrap; /* Дозволяємо перенос на новий ряд */
     justify-content: center; /* Вирівнюємо по центру */
     gap: 50px; /* Відстань між діаграмами */
