@@ -1,34 +1,20 @@
-// import React from "react";
-// import './BlockMenuStudent.css'
-// import logo from '../../images/LOGO.png'
-//
-// export const BlockMenuStudent = () => {
-//     return(
-//         <>
-//         <div className="leftBlock">
-//         <a href="/" className="header_logo_link">
-//                             <img src={logo} alt="logo" className="header_logo_pic" />
-//                         </a>
-//
-//         </div>
-//         </>
-//     );
-// }
 import React, { useState } from "react";
 import "./BlockMenuStudent.css";
-import logo from '../../images/logoSvg.svg'
+import logo from '../../images/logoSvg.svg';
 
 export const BlockMenuStudent = ({ menuItems }) => {
     const [activeItem, setActiveItem] = useState(null);
 
     const handleClick = (item) => {
         setActiveItem(item);
-        document.getElementById(item.toLowerCase().replace(/\s+/g, '-')).scrollIntoView({ behavior: 'smooth' });
+        const elementId = item.toLowerCase().replace(/\s+/g, '-'); // Transform item to match the ID
+        document.getElementById(elementId).scrollIntoView({ behavior: 'smooth' });
     };
+
     return (
         <div className="vertical-header">
             <div className="logo">
-                <img src={logo} alt="Logo"/>
+                <img src={logo} alt="Logo" />
             </div>
 
             <nav className="menu">
