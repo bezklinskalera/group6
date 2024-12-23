@@ -7,8 +7,12 @@ export const BlockMenuStudent = ({ menuItems }) => {
 
     const handleClick = (item) => {
         setActiveItem(item);
-        const elementId = item.toLowerCase().replace(/\s+/g, '-'); // Transform item to match the ID
-        document.getElementById(elementId).scrollIntoView({ behavior: 'smooth' });
+        const elementId = item.toLowerCase().replace(/\s+/g, '-'); // Перетворює назву в id
+        console.log(elementId)
+        const element = document.getElementById(elementId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' }); // Прокрутка до елемента
+        }
     };
 
     return (
@@ -16,12 +20,14 @@ export const BlockMenuStudent = ({ menuItems }) => {
             <div className="logo">
                 <img src={logo} alt="Logo" />
             </div>
-
             <nav className="menu">
                 <ul>
                     {menuItems.map((item, index) => (
-                        <li key={index} className={`menu-item ${activeItem === item ? 'active' : ''}`}
-                            onClick={() => handleClick(item)}>
+                        <li
+                            key={index}
+                            className={`menu-item ${activeItem === item ? 'active' : ''}`}
+                            onClick={() => handleClick(item)}
+                        >
                             <a href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}>{item}</a>
                         </li>
                     ))}

@@ -69,7 +69,7 @@ export const StudentPage = () => {
     const subjects = [
         "ТЕХНОЛОГІЇ DEVOPS",
         "АСИНХРОННЕ ПРОГРАМУВАННЯ",
-        "ОСНОВИ ІНТЕРНЕТУ РЕЧЕЙ ",
+        "ОСНОВИ ІНТЕРНЕТУ РЕЧЕЙ",
         "ПРОГРАМНЕ ЗАБЕЗПЕЧЕННЯ МЕРЕЖ ПЕРЕДАЧІ ДАНИХ",
         "ОСНОВИ РОЗРОБКИ ТРАНСЛЯТОРІВ",
         "ПРАКТИЧНИЙ КУРС ІНОЗЕМНОЇ МОВИ",
@@ -145,7 +145,6 @@ export const StudentPage = () => {
     ];
 
 
-
     const columns = [
         {field: "id", headerName: "Дата", align: "center"},
         {field: "name", headerName: "Присутність"},
@@ -158,7 +157,7 @@ export const StudentPage = () => {
                 <p className="welcomeText">Вітаємо, {currentUser.Name}</p>
                 <div className="card">
                     <div className="card-header">
-                        <h3 className="card-title">
+                        <h3 id="всі-предмети" className="card-title">
                             Оцінки з усіх предметів
                         </h3>
                     </div>
@@ -181,63 +180,29 @@ export const StudentPage = () => {
                         </div>
                     </div>
                 </div>
-                <div className="main-block__chart_student main-block__chart_main_student">
-                    <BarChart
-                        className="custom-bar-chart_student"
-                        series={seriesAttendance}
-                        yAxis={[
-                            {
-                                label: 'Кількість студентів',
-                            },
-                        ]}
-                        xAxis={[{data: subjects, scaleType: 'band'}]}
-                        margin={{top: 50, bottom: 30, left: 40, right: 10}}
-                        colors={["#027BFF"]} // Цвет для посещаемости
-                        sx={{
-                            '& .MuiChartsLegend-root': {
-                                display: 'none', // Вимикає легенду
-                            },
-                        }}
-                    />
-                </div>
-                <h3 className="title_subject">Технології DevOps</h3>
+
+
+                <h3 id="технології-devops" className="title_subject">Технології DevOps</h3>
                 <div className="main-block__charts chartsGroup">
-
-
-                    <TableStudent rows={rows1} columns={columns} title="Відвідуваність студентів"
-                                  className="table-container"/>
-
-
+                    <TableStudent rows={rows1} columns={columns} title="Відвідуваність студентів" className="table-container"/>
                 </div>
-                <h3 className="title_subject">Асинхронне програмування</h3>
+
+                <h3 id="асинхронне-програмування" className="title_subject">Асинхронне програмування</h3>
                 <div className="main-block__charts chartsGroup">
-
-
-                    <TableStudent rows={rows2} columns={columns} title="Відвідуваність студентів"
-                                  className="table-container"/>
-
-
+                    <TableStudent rows={rows2} columns={columns} title="Відвідуваність студентів" className="table-container"/>
                 </div>
-                <h3 className="title_subject">Основи Інтернету речей</h3>
+
+                <h3 id="основи-інтернету-речей-" className="title_subject">Основи Інтернету речей</h3>
                 <div className="main-block__charts chartsGroup">
-
-
-                    <TableStudent rows={rows3} columns={columns} title="Відвідуваність студентів"
-                                  className="table-container"/>
-
-
+                    <TableStudent rows={rows3} columns={columns} title="Відвідуваність студентів" className="table-container"/>
                 </div>
-                <h3 className="title_subject">Основи розробки трансляторів</h3>
+
+                <h3 id="основи-розробки-трансляторів" className="title_subject">Основи розробки трансляторів</h3>
                 <div className="main-block__charts chartsGroup">
-
-
-                    <TableStudent rows={rows4} columns={columns} title="Відвідуваність студентів"
-                                  className="table-container"/>
-
-
+                    <TableStudent rows={rows4} columns={columns} title="Відвідуваність студентів" className="table-container"/>
                 </div>
             </div>
         </div>
-    )
-        ;
+    );
+
 };
