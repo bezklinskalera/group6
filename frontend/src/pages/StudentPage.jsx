@@ -5,6 +5,9 @@ import {BlockMenuStudent} from "../components/BlockMenuStudent/BlockMenuStudent"
 import {useSelector} from "react-redux";
 import {Bar} from "react-chartjs-2";
 import "../styles/StudentPage.css";
+import iconboxInfo from "../images/iconboxInfo.svg";
+import TableAttendance from "../components/TableAttendance/TableAttendance";
+import TableStudent from "../components/TableStudent/TableStudent";
 
 const barChartData = {
     labels: ["Jan", "Feb", "Mar", "Apr", "May"],
@@ -66,7 +69,7 @@ export const StudentPage = () => {
     const subjects = [
         "ТЕХНОЛОГІЇ DEVOPS",
         "АСИНХРОННЕ ПРОГРАМУВАННЯ",
-        "ОСНОВИ ІНТЕРНЕТУ РЕЧЕЙ ",
+        "ОСНОВИ ІНТЕРНЕТУ РЕЧЕЙ",
         "ПРОГРАМНЕ ЗАБЕЗПЕЧЕННЯ МЕРЕЖ ПЕРЕДАЧІ ДАНИХ",
         "ОСНОВИ РОЗРОБКИ ТРАНСЛЯТОРІВ",
         "ПРАКТИЧНИЙ КУРС ІНОЗЕМНОЇ МОВИ",
@@ -109,14 +112,52 @@ export const StudentPage = () => {
 
 
     const categoriesAttendance = dataAttendance.map(item => item.date);
+    const rows1 = [
+        {id: '04.09', name: "Присутній", attendance: 10},
+        {id: '10.09', name: "Відсутній", attendance: 5},
+        {id: '16.09', name: "Присутній", attendance: 9},
+        {id: '22.09', name: "Відсутній", attendance: 6},
+        {id: '28.09', name: "Присутній", attendance: 7},
+    ];
+
+    const rows2 = [
+        {id: '05.09', name: "Присутній", attendance: 9},
+        {id: '11.09', name: "Присутній", attendance: 7},
+        {id: '17.09', name: "Відсутній", attendance: 4},
+        {id: '23.09', name: "Присутній", attendance: 8},
+        {id: '29.09', name: "Відсутній", attendance: 5},
+    ];
+
+    const rows3 = [
+        {id: '06.09', name: "Відсутній", attendance: 4},
+        {id: '12.09', name: "Присутній", attendance: 9},
+        {id: '18.09', name: "Присутній", attendance: 10},
+        {id: '24.09', name: "Присутній", attendance: 8},
+        {id: '30.09', name: "Відсутній", attendance: 6},
+    ];
+
+    const rows4 = [
+        {id: '07.09', name: "Присутній", attendance: 8},
+        {id: '13.09', name: "Відсутній", attendance: 3},
+        {id: '19.09', name: "Присутній", attendance: 10},
+        {id: '25.09', name: "Відсутній", attendance: 5},
+        {id: '01.10', name: "Присутній", attendance: 9},
+    ];
+
+
+    const columns = [
+        {field: "id", headerName: "Дата", align: "center"},
+        {field: "name", headerName: "Присутність"},
+        {field: "attendance", headerName: "Оцінка", align: "center"},
+    ];
     return (
         <div className="main">
             <BlockMenuStudent menuItems={subjectsForMenu}/>
             <div className="centralBlock">
-              <p className="welcomeText">Вітаємо, {currentUser.Name}</p>
+                <p className="welcomeText">Вітаємо, {currentUser.Name}</p>
                 <div className="card">
                     <div className="card-header">
-                        <h3 className="card-title">
+                        <h3 id="всі-предмети" className="card-title">
                             Оцінки з усіх предметів
                         </h3>
                     </div>
@@ -139,38 +180,29 @@ export const StudentPage = () => {
                         </div>
                     </div>
                 </div>
-                <div className="main-block__chart_student main-block__chart_main_student">
-                    <BarChart
-                        className="custom-bar-chart_student"
-                        series={seriesAttendance}
-                        yAxis={[
-                            {
-                                label: 'Кількість студентів',
-                            },
-                        ]}
-                        xAxis={[{data: subjects, scaleType: 'band'}]}
-                        margin={{top: 50, bottom: 30, left: 40, right: 10}}
-                        colors={["#027BFF"]} // Цвет для посещаемости
-                        sx={{
-                            '& .MuiChartsLegend-root': {
-                                display: 'none', // Вимикає легенду
-                            },
-                        }}
-                    />
+
+
+                <h3 id="технології-devops" className="title_subject">ТЕХНОЛОГІЇ DEVOPS</h3>
+                <div className="main-block__charts chartsGroup">
+                    <TableStudent rows={rows1} columns={columns} title="Відвідуваність студентів" className="table-container"/>
                 </div>
-                <h3 className="title_subject">Технології DevOps</h3>
-                {/* Row with the Bar chart and image */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                        marginTop: "20px",
-                    }}
-                >
+
+                <h3 id="асинхронне-програмування" className="title_subject">АСИНХРОННЕ ПРОГРАМУВАННЯ</h3>
+                <div className="main-block__charts chartsGroup">
+                    <TableStudent rows={rows2} columns={columns} title="Відвідуваність студентів" className="table-container"/>
+                </div>
+
+                <h3 id="основи-інтернету-речей-" className="title_subject">Основи Інтернету речей</h3>
+                <div className="main-block__charts chartsGroup">
+                    <TableStudent rows={rows3} columns={columns} title="Відвідуваність студентів" className="table-container"/>
+                </div>
+
+                <h3 id="основи-розробки-трансляторів" className="title_subject">Основи розробки трансляторів</h3>
+                <div className="main-block__charts chartsGroup">
+                    <TableStudent rows={rows4} columns={columns} title="Відвідуваність студентів" className="table-container"/>
                 </div>
             </div>
         </div>
-    )
-        ;
+    );
+
 };
