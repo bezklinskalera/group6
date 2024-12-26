@@ -295,12 +295,12 @@ import HeaderStandart from "../components/HeaderStandart/HeaderStandart"; // Imp
 
 function AdminPage() {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', justifyContent: 'space-between' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', justifyContent: 'space-between', background:'#F8F8F8' }}>
       {/* Header */}
       <HeaderStandart />
 
       {/* Main Content */}
-      <Container maxWidth="lg" sx={{ mt: 4, mb: 4, flex: 1, display: 'flex', justifyContent: 'center' }}>
+      <Container maxWidth="lg" sx={{ mt: 4, mb: 4, flex: 1, display: 'flex', justifyContent: 'center', backgroundColor:'F8F8F8' }}>
         <Grid2 container spacing={4} justifyContent="center">
           {/* Main Stats */}
           <Grid2 item xs={12} md={4}>
@@ -404,13 +404,13 @@ function AttestationChart() {
         <Typography variant="h6" gutterBottom>Атестація</Typography>
         <Grid2 container spacing={2}>
           <Grid2 item xs={12} md={6}>
-            <Typography variant="body1" gutterBottom>Гістограма</Typography>
+            {/*<Typography variant="body1" gutterBottom>Гістограма</Typography>*/}
             <Box height={200}>
               <Bar data={dataBar} options={{ responsive: true, maintainAspectRatio: false }} />
             </Box>
           </Grid2>
           <Grid2 item xs={12} md={6}>
-            <Typography variant="body1" gutterBottom>Пай-чарт</Typography>
+            {/*<Typography variant="body1" gutterBottom>Пай-чарт</Typography>*/}
             <Box height={200}>
               <Pie data={dataPie} options={{ responsive: true, maintainAspectRatio: false }} />
             </Box>

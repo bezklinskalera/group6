@@ -34,9 +34,9 @@ const HeaderTeacher = () => {
                     </ul>
 
                 </nav>
-                <a href="" className="header__icon">
-                    <img src={icon_account} alt="icon_account"/>
-                </a>
+                {/*<a href="" className="header__icon">*/}
+                {/*    <img src={icon_account} alt="icon_account"/>*/}
+                {/*</a>*/}
             </div>
         </header>
     );

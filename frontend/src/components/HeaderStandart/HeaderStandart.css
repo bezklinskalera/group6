@@ -5,7 +5,7 @@
     box-sizing: content-box;
 }
 
-.header {
+.headerAdmin {
     width: 100%; /* Фиксированное положение для видимости при скролле */
     top: 0;
     left: 0;

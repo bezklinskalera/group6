@@ -39,7 +39,7 @@ export const RegistrationPage = () => {
     if (!formData.lastName || !formData.firstName || !formData.middleName || !formData.email || !formData.password || !formData.confirmPassword || !formData.group) {
       setError('Please fill all fields.');
     } else if (formData.password !== formData.confirmPassword) {
-      setError('Passwords do not match.');
+      setError('Паролі не співпадають');
     } else {
       try {
         const payload = {

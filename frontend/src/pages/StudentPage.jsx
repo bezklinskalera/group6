@@ -143,7 +143,28 @@ export const StudentPage = () => {
         {id: '25.09', name: "Відсутній", attendance: 5},
         {id: '01.10', name: "Присутній", attendance: 9},
     ];
+    const rows5 = [
+        {id: '08.09', name: "Відсутній", attendance: 5},
+        {id: '14.09', name: "Присутній", attendance: 7},
+        {id: '18.09', name: "Присутній", attendance: 11},
+        {id: '26.09', name: "Присутній", attendance: 9},
+        {id: '31.09', name: "Відсутній", attendance: 6},
+    ];
 
+    const rows6 = [
+        {id: '09.09', name: "Відсутній", attendance: 9},
+        {id: '13.09', name: "Присутній", attendance: 10},
+        {id: '19.09', name: "Присутній", attendance: 12},
+        {id: '22.09', name: "Присутній", attendance: 15},
+        {id: '30.09', name: "Відсутній", attendance: 6},
+    ];
+    const rows7 = [
+        {id: '10.09', name: "Відсутній", attendance: 19},
+        {id: '18.09', name: "Присутній", attendance: 14},
+        {id: '23.09', name: "Присутній", attendance: 17},
+        {id: '28.09', name: "Присутній", attendance: 20},
+        {id: '31.09', name: "Відсутній", attendance: 22},
+    ];
 
     const columns = [
         {field: "id", headerName: "Дата", align: "center"},
@@ -184,22 +205,45 @@ export const StudentPage = () => {
 
                 <h3 id="технології-devops" className="title_subject">Технології DevOps</h3>
                 <div className="main-block__charts chartsGroup">
-                    <TableStudent rows={rows1} columns={columns} title="Відвідуваність студентів" className="table-container"/>
+                    <TableStudent rows={rows1} columns={columns} title="Відвідуваність"
+                                  className="table-container"/>
                 </div>
 
                 <h3 id="асинхронне-програмування" className="title_subject">Асинхронне програмування</h3>
                 <div className="main-block__charts chartsGroup">
-                    <TableStudent rows={rows2} columns={columns} title="Відвідуваність студентів" className="table-container"/>
+                    <TableStudent rows={rows2} columns={columns} title="Відвідуваність"
+                                  className="table-container"/>
                 </div>
 
-                <h3 id="основи-інтернету-речей-" className="title_subject">Основи Інтернету речей</h3>
+                <h3 id="програмне-забезпечення-мереж-передачі-даних" className="title_subject">Програмне забезпечення
+                    мереж передачі даних</h3>
                 <div className="main-block__charts chartsGroup">
-                    <TableStudent rows={rows3} columns={columns} title="Відвідуваність студентів" className="table-container"/>
+                    <TableStudent rows={rows3} columns={columns} title="Відвідуваність"
+                                  className="table-container"/>
+                </div>
+
+                <h3 id="основи-інтернету-речей-" className="title_subject">Основи інтернету речей</h3>
+                <div className="main-block__charts chartsGroup">
+                    <TableStudent rows={rows4} columns={columns} title="Відвідуваність"
+                                  className="table-container"/>
                 </div>
 
                 <h3 id="основи-розробки-трансляторів" className="title_subject">Основи розробки трансляторів</h3>
                 <div className="main-block__charts chartsGroup">
-                    <TableStudent rows={rows4} columns={columns} title="Відвідуваність студентів" className="table-container"/>
+                    <TableStudent rows={rows5} columns={columns} title="Відвідуваність"
+                                  className="table-container"/>
+                </div>
+
+                <h3 id="практичний-курс-іноземної-мови" className="title_subject">Практичний курс іноземної мови</h3>
+                <div className="main-block__charts chartsGroup">
+                    <TableStudent rows={rows6} columns={columns} title="Відвідуваність"
+                                  className="table-container"/>
+                </div>
+
+                <h3 id="компоненти-програмної-інженерії" className="title_subject">Компоненти програмної інженерії</h3>
+                <div className="main-block__charts chartsGroup">
+                    <TableStudent rows={rows7} columns={columns} title="Відвідуваність"
+                                  className="table-container"/>
                 </div>
             </div>
         </div>

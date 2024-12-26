@@ -13,8 +13,8 @@ export const TeacherPage = () => {
     // Данные для первой диаграммы (Аттестация)
     const dataAttestation = [
         { name: 'ТВ-21', hasAttestation: 24, noAttestation: 6 },
-        { name: 'ТВ-22', hasAttestation: 20, noAttestation: 10 },
-        { name: 'ТВ-23', hasAttestation: 25, noAttestation: 5 },
+        { name: 'ТВ-22', hasAttestation: 20, noAttestation: 7 },
+        { name: 'ТВ-23', hasAttestation: 25, noAttestation: 8 },
     ];
     // Фільтруємо дані для групи ТВ-21
     const dataForTWB21 = dataAttestation.find(item => item.name === 'ТВ-21');

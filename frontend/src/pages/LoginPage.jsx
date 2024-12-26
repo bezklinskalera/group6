@@ -55,7 +55,7 @@ export const LoginPage = () => {
           setError(response.message || "Щось пішло не так.");
         }
       } catch (err) {
-        setError(err.message || "Помилка сервера");
+        setError(err.message || "Неправильний логін чи пароль");
       }
     }
   };
@@ -104,10 +104,10 @@ export const LoginPage = () => {
                 endAdornment: <Lock sx={{ fontSize: 20, color: "gray" }} />,
               }}
             />
-            <FormControlLabel
-              control={<Checkbox name="rememberMe" color="primary" checked={formData.rememberMe} onChange={handleChange} />}
-              label="Запам'ятати мене"
-            />
+            {/*<FormControlLabel*/}
+            {/*  control={<Checkbox name="rememberMe" color="primary" checked={formData.rememberMe} onChange={handleChange} />}*/}
+            {/*  label="Запам'ятати мене"*/}
+            {/*/>*/}
             {error && <Typography color="error">{error}</Typography>}
             <Button
               type="submit"
@@ -119,10 +119,10 @@ export const LoginPage = () => {
             >
               {isLoading ? "Завантаження..." : "Увійти"}
             </Button>
-            <Box display="flex" justifyContent="space-between">
-              <Link href="#" variant="body2">Забули пароль?</Link>
-              <Link href="/signup" variant="body2">Зареєструвати новий акаунт</Link>
-            </Box>
+            {/*<Box display="flex" justifyContent="space-between">*/}
+            {/*  <Link href="#" variant="body2">Забули пароль?</Link>*/}
+            {/*  <Link href="/signup" variant="body2">Зареєструвати новий акаунт</Link>*/}
+            {/*</Box>*/}
           </Box>
         </Box>
       </Container>
